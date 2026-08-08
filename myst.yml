@@ -1,0 +1,57 @@
+# MyST configuration for the IMC21 4D-STEM workshop companion site.
+# See: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 2026-imc-4dstem
+  title: 4D-STEM Workshop
+  description: >
+    Companion site for the IMC21 pre-congress workshop "From nanobeam to
+    ptychography: 4D-STEM data acquisition, processing, and interpretation".
+  keywords:
+    - electron microscopy
+    - STEM
+    - 4D-STEM
+    - nanobeam electron diffraction
+    - ptychography
+    - strain mapping
+    - orientation mapping
+  github: https://github.com/ophusgroup/2026-imc-4dstem
+  exclude:
+    - README.md
+  toc:
+    - file: index.md
+    - file: agenda.md
+    - title: Modules
+      children:
+        - file: topics/acquisition.md
+        - file: topics/software.md
+        - file: topics/data-handling.md
+        - file: topics/strain.md
+        - file: topics/orientation.md
+        - file: topics/virtual-imaging.md
+        - file: topics/ml-clustering.md
+        - file: topics/polymers.md
+        - file: topics/amorphous-pdf.md
+        - file: topics/phase-contrast.md
+        - file: topics/ptychography.md
+        - file: topics/deep-ptychography.md
+    - file: resources.md
+site:
+  template: book-theme
+  title: 4D-STEM Workshop
+  options:
+    # Custom theming — see ./style.css
+    style: ./style.css
+    logo_text: 4D-STEM Workshop
+    folders: true
+    outline_maxdepth: 2
+    hide_footer_links: true
+  nav:
+    - title: IMC21
+      url: https://www.imc21.org.uk/
+    - title: py4DSTEM
+      url: https://github.com/py4dstem/py4DSTEM
+    - title: quantEM
+      url: https://electronmicroscopy.github.io/quantem-docs/
+    - title: Tutorials and Slides
+      url: https://drive.google.com/drive/folders/1_emscd_XRTv1hUWh55-hbWty2XoU0R7X?usp=drive_link
