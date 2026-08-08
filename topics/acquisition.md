@@ -1,6 +1,6 @@
 ---
-title: Practical guidance for nanobeam 4D-STEM acquisition
-short_title: Acquiring nanobeam data
+title: Practical guidance for 4D-STEM
+short_title: Practical guidance
 ---
 
 :::{admonition} Learning goals
@@ -8,6 +8,7 @@ short_title: Acquiring nanobeam data
 - Choose probe conditions (convergence angle, current, step size) that match your sample and measurement.
 - Understand the camera parameters (frame rate, dynamic range, counting) that govern data quality.
 - Leave the microscope with the calibration data your analysis will need.
+- Know which open-source package fits each analysis task.
 :::
 
 In four-dimensional scanning transmission electron microscopy (4D-STEM), we scan a focused or nearly-parallel electron probe over a two-dimensional grid of positions on the sample, and record a full two-dimensional diffraction pattern at every position [](doi:10.1017/S1431927619000497). The result is a four-dimensional dataset: two real-space scan dimensions and two reciprocal-space detector dimensions.
@@ -39,7 +40,7 @@ Mean (top) and single (bottom) diffraction patterns as the convergence semi-angl
 Things to consider when choosing probe conditions:
 
 - **Convergence angle:** small enough that disks of interest do not overlap, large enough that the probe stays small compared to the microstructural features you want to resolve. Disk-edge sharpness also sets how precisely disk positions can be measured.
-- **Probe current and dose:** disk registration works well even at low dose, but weak reflections (superlattice peaks, high-order Laue zones, amorphous halos) need adequate counts. For beam-sensitive materials (see the [polymer module](./polymers.md)), total fluence budgets of 1–100 e⁻/Å² may apply [](doi:10.1021/acs.accounts.1c00073), which dictates probe current, dwell time, and step size.
+- **Probe current and dose:** disk registration works well even at low dose, but weak reflections (superlattice peaks, high-order Laue zones, amorphous halos) need adequate counts. For beam-sensitive materials (see the [polymer module](./disordered.md)), total fluence budgets of 1–100 e⁻/Å² may apply [](doi:10.1021/acs.accounts.1c00073), which dictates probe current, dwell time, and step size.
 - **Scan step size:** for mapping, the step is usually chosen comparable to or larger than the probe size. Oversampling wastes dose; undersampling misses microstructure.
 - **Camera length:** sets which scattering angles land on the detector. Strain and orientation mapping want the first few orders of Bragg reflections; PDF measurements want to reach high scattering vectors (several Å⁻¹).
 - **Aperture size:** the physical condenser aperture sets the convergence angle and the coherence of the illumination, and smaller apertures can substantially improve the signal-to-noise of weak reflections by sharpening the diffracted spots:
@@ -72,3 +73,40 @@ Dynamic range in one frame: exposure that saturates the primary beam (left) can 
 4. Verify counts: no saturation in the central beam, adequate signal in the weakest disks you need.
 5. Acquire calibration data: a vacuum probe image (for disk-template methods), a known calibration standard (e.g., gold nanoparticles) for pixel size and elliptical distortion, and a scan-rotation calibration.
 6. Record all metadata (accelerating voltage, camera length, convergence angle, dwell time, probe current); your future self doing the analysis will thank you.
+
+## The software ecosystem
+
+A healthy ecosystem of open-source Python packages has grown up around 4D-STEM analysis. They overlap in places, and that is a feature: you can move data between them, cross-check results, and pick the tool whose workflow fits your problem. This module gives a whirlwind tour of the packages used in this course.
+
+### py4DSTEM
+
+[py4DSTEM](https://github.com/py4dstem/py4DSTEM) [](doi:10.1017/S1431927621000477) is an open-source Python package for 4D-STEM analysis, developed at Lawrence Berkeley National Laboratory and by a broad community of contributors. It covers the full pipeline used in this course: file I/O across many vendor formats, calibration, virtual imaging, Bragg disk detection, strain mapping, automated crystal orientation mapping (ACOM), fluctuation microscopy, and phase contrast imaging methods including ptychography. Most of the hands-on Colab sessions today use py4DSTEM.
+
+### quantEM
+
+[quantEM](https://electronmicroscopy.github.io/quantem-docs/) is a newer open-source toolkit for quantitative electron microscopy built on PyTorch, so the same analysis code runs on CPUs and GPUs and integrates naturally with deep learning workflows. It spans imaging, diffraction, ptychography, tomography, and spectroscopy, and is under active development by several of the course instructors and collaborators ([code on GitHub](https://github.com/electronmicroscopy/quantem)).
+
+### pyxem / HyperSpy
+
+[pyxem](https://pyxem.readthedocs.io/) is a 4D-STEM analysis library built on the [HyperSpy](https://hyperspy.org/) multi-dimensional data framework. It is particularly strong for scanning (precession) electron diffraction workflows: template-matching orientation mapping [](doi:10.1016/j.ultramic.2022.113517), virtual imaging, and vector-based diffraction analysis, with lazy/out-of-core processing for datasets larger than memory via Dask.
+
+### Kelvin_STEM
+
+[Kelvin_STEM](https://github.com/maclariz/Kelvin_STEM) is a set of fast 4D-STEM analysis tools developed by Ian MacLaren's group at the University of Glasgow, used in this course for virtual imaging, digital dark field, and clustering workflows on large datasets.
+
+### abTEM
+
+[abTEM](https://abtem.readthedocs.io/) [](doi:10.12688/openreseurope.13015.1) simulates TEM and STEM experiments from first principles: multislice and PRISM image simulation directly from atomic models, entirely in Python. Simulation matters for 4D-STEM analysis: it lets you generate test data with known ground truth, design experiments (convergence angle, thickness, tilt sensitivity), and build the diffraction template libraries used in orientation mapping.
+
+### Which tool should I use?
+
+| Task | Good starting points |
+| --- | --- |
+| Load / browse / calibrate 4D data | py4DSTEM, pyxem, quantEM |
+| Virtual imaging (BF/ADF/custom masks) | any of the above; Kelvin_STEM for speed on large data |
+| Strain mapping | py4DSTEM, pyxem, quantEM |
+| Orientation / phase mapping | py4DSTEM (ACOM), pyxem (template matching) |
+| ML clustering / decomposition | pyxem + scikit-learn, Kelvin_STEM |
+| Amorphous / PDF analysis | py4DSTEM, quantEM |
+| Simulation | abTEM |
+| Ptychography / phase retrieval | [quantEM](https://github.com/electronmicroscopy/quantem-tutorials/tree/main/tutorials/diffractive_imaging), [PtyRAD](https://ptyrad.readthedocs.io/en/latest/), [phaser](https://hexane360.github.io/phaser/dev/) |

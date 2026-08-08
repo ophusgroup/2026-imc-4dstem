@@ -10,7 +10,7 @@ short_title: Deep learning ptychography
 - Reconstruct a complex experimental system with a deep-learning-augmented solver.
 :::
 
-The [previous session](./ptychography.md) reconstructed a simple, thin sample where standard iterative ptychography converges cleanly. Real problems are messier: low-dose data of beam-sensitive materials, thick multislice objects, and datasets where the optimization is badly conditioned. This session shows how deep learning strengthens the reconstruction while keeping the physics in charge.
+The [previous session](./phase-contrast.md) reconstructed a simple, thin sample where standard iterative ptychography converges cleanly. Real problems are messier: low-dose data of beam-sensitive materials, thick multislice objects, and datasets where the optimization is badly conditioned. This session shows how deep learning strengthens the reconstruction while keeping the physics in charge.
 
 ## Physics-based solvers with learned priors
 

@@ -24,16 +24,11 @@ project:
     - title: Modules
       children:
         - file: topics/acquisition.md
-        - file: topics/software.md
-        - file: topics/data-handling.md
-        - file: topics/strain.md
-        - file: topics/orientation.md
+        - file: topics/disk-detection-strain.md
         - file: topics/virtual-imaging.md
-        - file: topics/ml-clustering.md
-        - file: topics/polymers.md
-        - file: topics/amorphous-pdf.md
+        - file: topics/orientation.md
+        - file: topics/disordered.md
         - file: topics/phase-contrast.md
-        - file: topics/ptychography.md
         - file: topics/deep-ptychography.md
     - file: resources.md
 site:
