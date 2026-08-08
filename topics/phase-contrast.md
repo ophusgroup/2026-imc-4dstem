@@ -20,13 +20,27 @@ The convergence angle now plays the opposite role from the morning. At small α,
 :::{figure} ../assets/movies/dpc-concept.mp4
 :alt: Animation of a probe scanning across a one-dimensional potential, with the bright field disk responding to the local field
 :width: 75%
-A probe scanning across a sample potential (red) at two convergence angles: the bright field disk responds to the local electric field. This is the signal that center-of-mass imaging reads out.
+A probe scanning across a sample potential (red): the bright field disk responds to the local electric field. This is the signal that center-of-mass imaging reads out.
+:::
+
+The three movies below show the same scan at increasing convergence angle, from the nanobeam regime of the morning sessions to the overlapping-disk regime that DPC and ptychography exploit:
+
+:::{figure} ../assets/movies/com-dpc-small.mp4
+:alt: Animation of the center-of-mass measurement with a small nanobeam probe, showing a sharp probe and small diffraction disk
+:width: 75%
+**Nanobeam regime (small convergence angle):** the probe is wide in real space, the disk is small and sharp, and the center of mass (cyan) barely responds. This is the regime for disk *positions*: strain and orientation mapping.
+:::
+
+:::{figure} ../assets/movies/com-dpc-medium.mp4
+:alt: Animation of the center-of-mass measurement at intermediate convergence angle
+:width: 75%
+**Intermediate convergence:** the probe sharpens in real space and the disk grows. The center of mass now tracks the local field as the probe crosses the potential: this is the DPC operating point.
 :::
 
 :::{figure} ../assets/movies/com-dpc-overlap.mp4
-:alt: Animation showing the center of mass of a large overlapping bright field disk shifting as the probe crosses the potential
+:alt: Animation of the center-of-mass measurement with a large overlapping bright field disk
 :width: 75%
-The same measurement in the overlapping-disk regime: the center of mass (cyan) of the full diffraction pattern tracks the momentum transferred to the probe as it crosses the potential.
+**Overlapping-disk regime (large convergence angle):** the probe is smallest, and the diffracted beams interfere inside the large bright field disk. The center of mass still measures the field, and the interference structure is what ptychography decodes.
 :::
 
 ## The method ladder

@@ -188,8 +188,19 @@ _RUNTIME = """
     toc.after(a);
   }
 
+  /* ---------- autoplay teaching movies ----------
+     The theme writes autoplay/loop but not muted, so browsers block
+     playback; mute them (they have no audio track anyway) and play. */
+  function vidTick(){
+    document.querySelectorAll('video[autoplay]').forEach(function(v){
+      if(!v.muted)v.muted=true;
+      if(v.paused)v.play().catch(function(){});
+    });
+  }
+
   function tick(){
     build(document.querySelector('button.myst-search-bar'));
+    vidTick();
   }
   function start(){
     tick();
