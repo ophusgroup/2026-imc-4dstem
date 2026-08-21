@@ -4,7 +4,7 @@ title: Agenda
 
 # Agenda
 
-**Sunday, August 30, 2026 · 9:00 – 17:00 · ACC Liverpool, UK**
+**Sunday, August 30, 2026 · 9:00 – 17:00 · Theatre 6, PC Suite, Rendall Building, University of Liverpool**
 
 | Time | Topic | Lead | Format |
 | --- | --- | --- | --- |
@@ -23,6 +23,7 @@ title: Agenda
 
 ## Logistics
 
+- The venue is on the University of Liverpool campus, not at the ACC Liverpool congress centre. See [Location](./index.md#location) for the address, maps, and campus map reference.
 - Lunch will be provided to all participants (12:00 – 13:00).
 - Tea and coffee are provided at the morning (10:30 – 11:00) and afternoon (15:00 – 15:30) breaks.
 - WiFi:
