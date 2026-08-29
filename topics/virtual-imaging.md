@@ -5,7 +5,7 @@ short_title: VDF, DDF & ML clustering
 
 :::{admonition} Hands-on tutorials
 :class: important
-- ▶️ [Virtual dark field and digital dark field (BFBT ceramic)](https://drive.google.com/file/d/1SwcFZd6bZJytR38UXeSiqpVuTk6yJnbX/view?usp=sharing)
+- ▶️ [Virtual dark field and digital dark field (BFBT ceramic)](https://drive.google.com/file/d/1hDakNT2u5XUbRXuNuR3yov29REhgkZDs/view?usp=sharing)
 - ▶️ [Clustering-based digital dark field imaging](https://colab.research.google.com/drive/1hKaw7YiaZiXWbvSQ1oKRuM_84tz7xUma?usp=sharing)
 :::
 
