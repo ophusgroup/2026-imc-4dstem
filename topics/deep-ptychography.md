@@ -3,6 +3,11 @@ title: Deep learning ptychography of complex systems
 short_title: Deep learning ptychography
 ---
 
+:::{admonition} Hands-on tutorial
+:class: important
+- ▶️ [Deep learning ptychography of the MOSS-6 metal-organic framework in quantEM](https://drive.google.com/file/d/1y32oB2hCe0qWTi3DTtt6ZqlVUvt81SIg/view?usp=sharing)
+:::
+
 :::{admonition} Learning goals
 :class: tip
 - Understand where conventional iterative ptychography struggles: low dose, thick samples, and unstable optimization.

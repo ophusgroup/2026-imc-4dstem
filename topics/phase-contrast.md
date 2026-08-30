@@ -3,6 +3,11 @@ title: Phase contrast 4D-STEM and ptychography
 short_title: Phase contrast & ptychography
 ---
 
+:::{admonition} Hands-on tutorial
+:class: important
+- ▶️ [Phase contrast ptychography of gold nanoparticles in quantEM](https://drive.google.com/file/d/1Bm7UQzY6I5OvlQb4goDIBlULQvBJkbbV/view?usp=sharing)
+:::
+
 :::{admonition} Learning goals
 :class: tip
 - Understand why phase contrast is the dose-efficient way to image weakly scattering samples.
