@@ -24,6 +24,7 @@ title: Agenda
 ## Logistics
 
 - The venue is on the University of Liverpool campus, not at the ACC Liverpool congress centre. See [Location](./index.md#location) for the address, maps, and campus map reference.
+- Room: **PC Suite, Rendall Building** (Theatre 6).
 - Lunch will be provided to all participants (12:00 – 13:00).
 - Tea and coffee are provided at the morning (10:30 – 11:00) and afternoon (15:00 – 15:30) breaks.
 - WiFi:
